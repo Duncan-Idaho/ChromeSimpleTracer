@@ -1,0 +1,12 @@
+{
+    "headers": {
+        "Referer": "http://dev.yacebao.com/script/edit.html?script_id=5LEDTL3fSUJK4g8Bxyr",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36"
+    },
+    "initialPriority": "VeryHigh",
+    "method": "GET",
+    "mixedContentType": "none",
+    "referrerPolicy": "no-referrer-when-downgrade",
+    "url": "http://dev.yacebao.com/assets/app/src/css/font-awesome.min.css"
+}

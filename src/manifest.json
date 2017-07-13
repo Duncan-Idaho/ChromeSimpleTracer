@@ -1,0 +1,22 @@
+{
+   "manifest_version": 2,
+
+   "name": "HttpMonitor",
+   "description": "Monitor all HTTP/HTTPs traffic from your browser.",
+   "version": "0.0.1",
+   "author": "httpmonitor@lianzhi.com",
+   "icons": {
+      "16": "icon-rec.png",
+      "48": "icon-rec.png",
+      "128": "icon-rec.png"
+   },
+   "background": {
+      "scripts": ["background.js", "FileSaver.min.js", "Fmt.js"]
+   },
+   "browser_action": {
+      "default_icon": "icon.png",
+      "default_title": "HttpMonitor"
+   },
+   "offline_enabled": true,
+   "permissions": ["webRequest", "webRequestBlocking", "tabs", "http://*/", "https://*/", "<all_urls>", "debugger", "storage"]
+}

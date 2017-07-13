@@ -1,0 +1,15 @@
+{
+    "headers": {
+        "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundarywqUChiD9xdNPLoGd",
+        "Origin": "http://dev.yacebao.com",
+        "Referer": "http://dev.yacebao.com/script/edit.html?script_id=5LEDTL3fSUJK4g8Bxyr",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36"
+    },
+    "initialPriority": "VeryHigh",
+    "method": "POST",
+    "mixedContentType": "none",
+    "postData": "------WebKitFormBoundarywqUChiD9xdNPLoGd\r\nContent-Disposition: form-data; name=\"file\"; filename=\"request-001.json.txt\"\r\nContent-Type: text/plain\r\n\r\n\r\n------WebKitFormBoundarywqUChiD9xdNPLoGd--\r\n",
+    "referrerPolicy": "no-referrer-when-downgrade",
+    "url": "http://dev.yacebao.com/script/attachment.do?1499083894779"
+}

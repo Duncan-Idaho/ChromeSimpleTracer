@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!-- 文档兼容模式的定义 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 优先使用webkit内核渲染页面 -->
+    <meta name="renderer" content="webkit">
+    <!-- 设置可视区域宽度与设备屏幕缩放比例为1.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HttpMonitor</title>
+    <meta name="keywords" content="HttpMonitor"/>
+    <meta name="description" content="Monitor all HTTP/HTTPs traffic from your browser.">
+    <meta name="author" content="httpmonitor@lianzhi.com">
+    <link rel="stylesheet" href="component/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/overview.css"/>
+</head>
+<body>
+<div class="overview-content">
+    <div class="overview-header">
+        <div class="com-btn">
+            <a id="action-start" class="btn btn-default btn-blue-border" href="#" role="button"><i class="icon-play"></i>开始</a>
+            <a id="action-stop" style="display: none" class="btn btn-default btn-blue-border" href="#" role="button"><i class="icon-play"></i>结束</a>
+            <a id="action-cleanup" class="btn btn-default btn-blue-border" href="#" role="button"><i class="icon-setting"></i>清空</a>
+            <a id="action-export" class="btn btn-default btn-blue-border" href="#" role="button"><i class="icon-export"></i>导出</a>
+        </div>
+    </div>
+    <div class="overview-main">
+        <div class="row">
+            <!--table-->
+            <div class="col-md-6 padding-r-10">
+                <div class="table-header">
+                    <table class="table table-bordered table1">
+                        <thead>
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="15%">请求方法</th>
+                            <th width="45%">
+                                <div class="dropdown ycb-dropdown address" id="address">
+                                    <div class="dropdown-action ycb-dropdown-target">URL<span class="caret"></span></div>
+                                    <ul class="dropdown-menu ycb-dropdown-content" ycb-noclick="true">
+                                        <div class="address-filter">
+                                            <div class="header">
+                                                <div>地址筛选</div>
+                                                <a href="#" class="icon-close-m close-m"></a>
+                                            </div>
+                                            <div class="content">
+                                                <form id="formFilter">
+                                                    <table class="table-domain" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="domain-name">
+                                                                <div class="form-group">
+                                                                    <label>域名: </label>
+                                                                    <input id="domain" type="text" class="form-control text-overflow" name="domain" value="">
+                                                                </div>
+                                                            </td>
+                                                            <td class="rules">
+                                                                <div class="form-group">
+                                                                    <label>规则:</label>
+                                                                    <select class="form-control" name="rule">
+                                                                        <option value="1">显示</option>
+                                                                        <option value="2">隐藏</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <a href="#" class="icon-close-s"></a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                            <a href="#" class="add-domain"><i class="icon-plus"></i>添加域名</a>
+                                            <a class="btn btn-primary filter-domain pull-right" href="#" role="button"><i class="icon-export"></i>确定</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th width="20%">
+                                <div class="dropdown ycb-dropdown type" id="type">
+                                    <div class="dropdown-action ycb-dropdown-target">类型<span class="caret"></span></div>
+                                    <ul class="dropdown-menu ycb-dropdown-content" ycb-noclick="true">
+                                        <div class="address-filter content-type v-filter-contentType">
+                                            <div class="content">
+                                                <div class="checkbox-div">
+                                                    <lable class="ycb-form-checkbox">
+                                                        <input class="filter-group-one" type="checkbox" ycb-check="" id="selectAll" value="">
+                                                        全部
+                                                    </lable>
+                                                </div>
+                                                <div id="list">
+                                                    <div class="checkbox-div">
+                                                        <lable class="ycb-form-checkbox">
+                                                            <input class="filter-group-one" type="checkbox" ycb-check="" value="Document" checked="checked">
+                                                            Document
+                                                        </lable>
+                                                    </div>
+                                                    <div class="checkbox-div">
+                                                        <lable class="ycb-form-checkbox">
+                                                            <input class="filter-group-one" type="checkbox" ycb-check="" value="Stylesheet">
+                                                            Stylesheet
+                                                        </lable>
+                                                    </div>
+                                                    <div class="checkbox-div">
+                                                        <lable class="ycb-form-checkbox">
+                                                            <input class="filter-group-one" type="checkbox" ycb-check="" value="Script">
+                                                            Script
+                                                        </lable>
+                                                    </div>
+                                                    <div class="checkbox-div">
+                                                        <lable class="ycb-form-checkbox">
+                                                            <input class="filter-group-one" type="checkbox" ycb-check="" value="Image">
+                                                            Image
+                                                        </lable>
+                                                    </div>
+                                                    <div class="checkbox-div">
+                                                        <lable class="ycb-form-checkbox">
+                                                            <input class="filter-group-one" type="checkbox" ycb-check="" value="XHR" checked="checked">
+                                                            XHR
+                                                        </lable>
+                                                    </div>
+                                                    <div class="checkbox-div">
+                                                        <lable class="ycb-form-checkbox">
+                                                            <input class="filter-group-one" type="checkbox" ycb-check="" value="Other">
+                                                            Other
+                                                        </lable>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="btn btn-primary btn-ok pull-right">确定</a>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th width="10%">操作</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-h padding-r-w">
+                    <table class="table table2 table-bordered" id="table-list">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <!--tab-->
+            <div class="col-md-6 padding-l-10">
+                <div class="right-tab v-right-tab">
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a id="request-tab" href="#request" data-toggle="tab">Headers</a></li>
+                            <li><a href="#response" data-toggle="tab">Response</a></li>
+                            <li id="post-tab"><a href="#post" data-toggle="tab">Timing</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active v-rpane-request" id="request"></div>
+                            <div class="tab-pane v-rpane-response" id="response"></div>
+                            <div class="tab-pane v-rpane-timing" id="timing"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="component/js/jquery.min.js"></script>
+<script src="component/js/bootstrap.min.js"></script>
+<script src="js/dropdown.js"></script>
+<script src="js/overview.js"></script>
+<script src="js/check.js"></script>
+<script src="js/popup.js"></script>
+
+</body>
+</html>

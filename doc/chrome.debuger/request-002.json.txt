@@ -1,0 +1,16 @@
+{
+    "headers": {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "Origin": "http://dev.yacebao.com",
+        "Referer": "http://dev.yacebao.com/login.html",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36",
+        "X-Requested-With": "XMLHttpRequest"
+    },
+    "initialPriority": "High",
+    "method": "POST",
+    "mixedContentType": "none",
+    "postData": "username=jessica.liu%40yunzhihui.com&password=123456233",
+    "referrerPolicy": "no-referrer-when-downgrade",
+    "url": "http://dev.yacebao.com/signin.do?1499083831415"
+}

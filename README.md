@@ -1,4 +1,4 @@
-# ChromeSimpleTracer
+# HttpMonitor
 
 This is a simple chrome plugin to record in a file all network traffic.
 
@@ -8,7 +8,7 @@ It allows non-developers such as Support or QA users of a web application to rec
 
 1. Open Chrome and head to ```chrome://extensions/``` from the address bar.
 2. Click on the button "Load unpacked extensions...".
-3. Select the folder containing the Chrome Simple HTTP Tracer's files.
+3. Select the folder containing the Chrome HttpMonitor's files.
 
 ## Usage
 
